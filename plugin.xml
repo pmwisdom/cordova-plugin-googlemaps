@@ -44,7 +44,7 @@
 
         <framework src="com.google.android.gms:play-services-maps:+" />
         <framework src="com.google.android.gms:play-services-location:+" />
-        <framework src="com.google.maps.android:android-maps-utils:x.y.z" />
+        <framework src="com.google.maps.android:android-maps-utils:+" />
 
         <!-- plugin src files -->
         <source-file src="src/android/plugin/google/maps/AsyncLicenseInfo.java" target-dir="src/plugin/google/maps" />
