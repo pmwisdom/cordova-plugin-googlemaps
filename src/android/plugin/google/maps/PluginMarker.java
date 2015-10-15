@@ -161,10 +161,15 @@ public class PluginMarker extends MyPlugin {
           Marker marker = (Marker)object;
           if (opts.has("visible")) {
             try {
-              marker.setVisible(opts.getBoolean("visible"));
+              Boolean visible = opts.getBoolean("visible");
+              if(visible) {
+                marker.show();
+              } else {
+                marker.hide();
+              }
             } catch (JSONException e) {}
           } else {
-            marker.setVisible(true);
+            marker.show();
           }
           
 
@@ -711,7 +716,7 @@ public class PluginMarker extends MyPlugin {
             String[] tmp = iconUrl.split(",");
             image = PluginUtil.getBitmapFromBase64encodedImage(tmp[1]);
           } else if (iconUrl.indexOf("file://") == 0 &&
-              iconUrl.indexOf("file:///android_asset/") == -1) {
+                iconUrl.indexOf("file:///android_asset/") == -1) {
             iconUrl = iconUrl.replace("file://", "");
             File tmp = new File(iconUrl);
             if (tmp.exists() && tmp.isFile()) {
