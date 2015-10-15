@@ -714,7 +714,7 @@ public class PluginMarker extends MyPlugin {
               iconUrl.indexOf("file:///android_asset/") == -1) {
             iconUrl = iconUrl.replace("file://", "");
             File tmp = new File(iconUrl);
-            if (tmp.exists()) {
+            if (tmp.exists() && tmp.isFile()) {
               image = BitmapFactory.decodeFile(iconUrl);
             } else {
               if (PluginMarker.this.mapCtrl.isDebug) {
