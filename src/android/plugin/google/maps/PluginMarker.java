@@ -163,13 +163,13 @@ public class PluginMarker extends MyPlugin {
             try {
               Boolean visible = opts.getBoolean("visible");
               if(visible) {
-                marker.isVisible(true);
+                marker.setVisible(true);
               } else {
-                marker.isVisible(false);
+                marker.setVisible(false);
               }
             } catch (JSONException e) {}
           } else {
-            marker.isVisible(true);
+            marker.setVisible(true);
           }
           
 
